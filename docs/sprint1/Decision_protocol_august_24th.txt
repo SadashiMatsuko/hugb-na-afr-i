@@ -1,0 +1,16 @@
+Decision protocol august 24th
+The group met at V201
+Jóhann, Hörður and Richard attended in person
+Kristján had said that he was not able to attend in person
+Daniel and Gylfi had not responded to the email that Richard sent with a discord invite
+Hörður knows Daniel and said that he could not attend because he had a broken leg
+
+The group decided on the system domain being a bowling alley because they felt that it was something everyone had some experience with
+the resource would be bowling lanes and the customer would be the players
+
+Richard forked the gitlab repo and set up issues for making user stories
+The group decided that each member that attended this class would write at least 3 user stories to begin with
+
+The group decided to make the system with Django and decided on a few programming rules
+
+The meeting finished and it was decided that the group would stay in contact online and meet next week in the same class
