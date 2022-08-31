@@ -1,0 +1,9 @@
+30/08/2022
+
+The group had a 45 minute meeting where we brought Daníel Örn to speed
+
+Daníel talked about possibly making a state diagram if he had enough time
+The group agreed that would be a nice bonus if it could get done
+
+The group decided on making the system with limited access for customers
+Employees should be make the bookings that customers request
