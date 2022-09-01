@@ -1,0 +1,14 @@
+31/08/2022 Decision protocol
+
+Daníel, Hörður, Jóhann, Richard attended in classroom v201
+
+Brainstorm about more requirements, completed the minimum amaount of user stories
+looked at keiluhöllin website
+
+Started writing a class diagram
+
+Wrote a description for the system in the overview document
+
+Fixed the Gitlab repo so that user stories are set up as requirements
+
+Started writing scenarios
