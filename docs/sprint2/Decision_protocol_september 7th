@@ -1,0 +1,14 @@
+Decision protocol september 7th
+The group met at V201
+Hörður, Jóhann, Kristján and Richard attended in person
+Daníel attended online
+
+Richard Helgi was chosen as Scrum master for sprint 2
+
+We decided to possible use these user stories:
+8. edit bookings
+9. add bookings to lanes
+10. Confirm when customers have paid
+11. add remove employees
+We will also create an authorization/ login systen for employees/ admins
+The first thing we will create is a database
