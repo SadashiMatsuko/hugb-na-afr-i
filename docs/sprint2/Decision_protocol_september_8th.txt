@@ -1,0 +1,19 @@
+Decision protocol september 8th
+Met in school Jóhann, Richard hittust í persónu
+Daníel online
+
+
+User story selection:
+4, 5, 7, 9, 11, 12, 10 (Numbered on github)
+The user stories each group member chose to do for sprint 2:
+Richard- 11
+Jóhann- 10
+Daníel- 4, 7
+Hörður- 5, 9
+Kristján- 12
+
+
+
+
+
+
