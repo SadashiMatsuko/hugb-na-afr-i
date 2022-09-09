@@ -1,0 +1,41 @@
+Richard- 11 - As an admin I would like to add and remove employees with the option of editing those accounts.
+	Tasks:
+	Add the ability to add employees
+	Add the ability to remove employees
+	Add the ability to edit employees
+
+Jóhann- 10 - As an admin I would like to add to the new’s section of the website. Showcasing offers and new features.
+	Tasks:
+	Make a function that can write into that table from the website
+	Make a database table for the news that is connected to the table for employees
+
+Daníel- 4, 7 - As an employee I want to be able to see the lanes are not in use at a certain date and time so that I can easily add people to the timeslot they asked for.
+	Tasks:
+	Add button to search by requested playing time
+	Add button to search by day
+	Add filter system to search lanes
+	Display available lanes at their time slots
+
+             - As an employee I want to be able to remove bookings from people that have canceled their game, so that I can free up lanes for other customers.
+	Tasks:
+	Add button to cancel lane booking when button clicked deletes row in booking with that booking id
+	Add button to search for lane by id or name
+	Add booked bool in lanes table with an id
+
+Hörður- 5, 9 - As an employee I want to be able to register more than one person to a lane so that groups can play together up to a certain limit (No more than 6 per lane).
+	Tasks:
+	add lanes to the database
+	add the limit of 6 players on each lane when adding a booking
+	add the ability to add multiple lanes for each booking
+	create a lane model/DB table
+	     - As an employee I want to be able to add bookings to lanes, so that I can fulfill the customer request.
+	Tasks:
+	create a functionality to add the data from the form to the DB table
+	create a graphical confirmation and deconfirmation that the new booking has been added to the DB
+	make a form for adding a booking to the DB table
+	make a model/DB table for bookings
+
+Kristján- 12 - As an employee I want to be able to confirm when customers have paid for their bowling lanes.
+	Tasks:
+	Add a function to see if a lane has been paid for
+	Add the ability to pay for the lane while booking
