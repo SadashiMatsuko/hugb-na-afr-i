@@ -1,0 +1,15 @@
+Definition of done sprint 2
+
+Choose user stories for each group member.
+Create tasks from the user stories.
+Each group member will finish their chosen tasks.
+A database will have been created.
+The ability for admins to add, remove and edit employees will be finished.
+The ability for admins to add news to the website will be finished.
+The ability for employees to see what lanes are not in use at a certain time will be finished.
+The ability for employees to remove bookings will be finished.
+The ability for employees to register more than one person for each lane up to a maximum of six will be finished.
+The ability for employees to add a booking for a lane will be finished.
+The ability for employees to see if a customer has paid will be finished.
+Unit tests will be created with at least 50% statement coverage.
+
