@@ -1,0 +1,8 @@
+Decision protocol september 13th
+The group had an online meeting.
+Kristján, Richard, Hörður, Daníel og Jóhann were on call.
+Decided on when next meetings will take place.
+Created database using heroku.
+Started Django and connected to the database.
+
+
