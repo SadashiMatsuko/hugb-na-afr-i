@@ -37,8 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'employees.apps.employeesConfig',
-    'bookings.apps.BookingsConfig',
+    'employees.apps.Lane17Config',
 ]
 
 MIDDLEWARE = [
@@ -78,12 +77,8 @@ WSGI_APPLICATION = 'STthLane.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'dffbmnfk9t5cv7',
-        'USER': 'vjkvtujhytewgy',
-        'PASSWORD': '9be8e03a51a7a4698cb7dad5198367d4b86fbaceafa6d95cb4ce4ca93345224f',
-        'HOST': 'ec2-52-208-164-5.eu-west-1.compute.amazonaws.com',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
