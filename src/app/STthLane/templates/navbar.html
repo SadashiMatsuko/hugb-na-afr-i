@@ -1,0 +1,18 @@
+{% load static %}
+<nav class="navbar navbar-light navbar-expand bg-light navigation-clean">
+    <div class="container">
+        <a class="navbar-brand" href="/" style="color: var(--bs-orange);"><b>17th Lane</b>
+        <img class="navbar-brand" src="{% static 'images/lan17.png' %}" width="50" height="50">
+        </a>
+        <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"></button>
+                </div>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navcol-1"></div>
+            <li class="nav-item dropdown" style="list-style-type: none;">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="{{ user.profiles.image.url }}" style="max-width: 43px; max-height: 43px; padding: 2px; background: dodgerblue; border-radius: 6px;">
+                    {{ user.username }} ({{ user.profiles.rating }}★)
+                </a>
+            </li>
+</nav>
