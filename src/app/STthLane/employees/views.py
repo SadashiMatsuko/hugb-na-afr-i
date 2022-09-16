@@ -20,7 +20,7 @@ def showUsers(request):
     """  """
     all_users = get_user_model().objects.all()
     context = {'allusers': all_users}
-    return render(request, 'edit_employee.html', context)
+    return render(request, 'employees/edit_employee.html', context)
 
 
 def removeEmployee(request):
