@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
     {% if user.is_superuser %}
-
+        {% for user in allusers %}
+            {{ user.first_name }}
+        {% endfor %}
     {% endif %}
 {% endblock %}

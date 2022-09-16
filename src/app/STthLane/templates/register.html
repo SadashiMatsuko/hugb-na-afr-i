@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
     {% if user.is_superuser %}
-    <p>Hello, admin whom would you like to add today?</p>
+    <p>Hello admin whom would you like to add today?</p>
         <form class="from form-horizontal" method="post">
             {% csrf_token %}
             {{ form }}

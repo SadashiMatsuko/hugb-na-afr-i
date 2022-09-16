@@ -5,7 +5,7 @@ from employees.forms import RegisterEmployeeForm
 
 # Create your views here.
 def register(request):
-    """  """
+    """ Is used when registering a new user """
     if request.method == 'POST':
         form = RegisterEmployeeForm(data=request.POST)
         if form.is_valid():
@@ -17,6 +17,7 @@ def register(request):
 
 
 def showUsers(request):
+    """  """
     all_users = get_user_model().objects.all()
     context = {'allusers': all_users}
     return render(request, 'edit_employee.html', context)
