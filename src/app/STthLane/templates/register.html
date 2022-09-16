@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+    {% if user.is_superuser %}
+    <p>Hello admin whom would you like to add today?</p>
+        <form class="from form-horizontal" method="post">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" class="btn btn-primary" value="Sign in">
+        </form>
+{% else %}
+    <p>You are not authorized to be here.</p>
+{% endif %}
+{% endblock %}
