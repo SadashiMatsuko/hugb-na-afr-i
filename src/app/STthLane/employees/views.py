@@ -34,4 +34,8 @@ def removeEmployee(request, user_id):
 def editEmployee(request, user_id):
     """ Is used to edit a specific employee """
     user = User.objects.get(pk=user_id)
-    return render(request, 'edit_emp_profile.html', {'user': user})
+    form = RegisterEmployeeForm(request.POST or None, instance=user)
+    if form.is_valid():
+        form.save()
+        return redirect('edit')
+    return render(request, 'edit_emp_profile.html', {'user': user, 'form': form})
