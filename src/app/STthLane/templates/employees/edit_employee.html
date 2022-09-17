@@ -1,8 +1,16 @@
 {% extends "base.html" %}
 {% block content %}
     {% if user.is_superuser %}
-        {% for user in allusers %}
-            {{ user.first_name }}
+        {% for users in allusers %}
+            <div>
+
+            <b>first name:</b> {{ users.first_name }}
+            <b>Last name:</b> {{ users.last_name }}
+            <b>username:</b> {{ users.username }}
+            <a>{% if users.id != user.id %}{% if users.id != 1 %}<input type="button" onclick="location.href='{% url 'remove-employee' users.id %}';" value="Delete" />{% endif %}{% endif %}</a>
+            <a><input type="button" onclick="location.href='{% url 'edit-employee' users.id %}';" value="Edit" /></a>
+
+            </div>
         {% endfor %}
     {% endif %}
 {% endblock %}

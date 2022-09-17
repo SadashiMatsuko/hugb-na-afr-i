@@ -9,16 +9,20 @@
 
     <div class="collapse navbar-collapse" id="navcol-1">
         <ul class="nav navbar-nav">
-            <li class="nav-item dropdown" style="list-style-type: none;">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src="{{ user.profiles.image.url }}" style="max-width: 43px; max-height: 43px; padding: 2px; background: dodgerblue; border-radius: 6px;" alt="no image">
-                    {{ user.username }} ({{ user.profiles.rating }}★)
+
+                <a >
+                    <img src="{{ user.profiles.image.url }}" style="max-width: 43px; max-height: 43px; padding: 2px; background: dodgerblue; border-radius: 6px;">
+                    {{ user.username }}
                 </a>
-            </li>
+
             {% if user.is_authenticated %}
+                <p>&nbsp;</p>
                 <li><a href="{% url 'logout' %}">logout</a></li>
                 {% if user.is_superuser %}
+                    <p>&nbsp;</p>
                     <li><a href="{% url 'register' %}">Register</a></li>
+                    <p>&nbsp;</p>
+                    <li><a href="{% url 'edit' %}">Edit</a></li>
                 {% endif %}
             {% else %}
                 <li><a href="{% url 'login' %}">login</a></li>
