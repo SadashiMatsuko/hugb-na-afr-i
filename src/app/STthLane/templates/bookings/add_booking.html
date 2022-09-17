@@ -1,11 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
+    {% include "messages.html" %}
     <div>
     <H3>Add Booking</H3>
     </div>
     <div>
+    <form class="form form-horizontal" enctype='multipart/form-data' action="{%  url 'add-booking' %}" method="post">
     {{ form }}
     {% csrf_token %}
+    <input type="submit" value="Submit" class="btn btn-primary">
+    </form>
 
     </div>
 {% endblock %}
