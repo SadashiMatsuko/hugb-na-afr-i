@@ -18,11 +18,11 @@ def add_bookings(request):
             if int(request.POST.get('player_amount')) > 0:
                 req_date = datetime.strptime(request.POST['date'], "%Y-%m-%d")
                 req_time = all_time_slots.get(id=request.POST['time_slot'])
-                request_datetime = datetime.combine(req_date, req_time.start_time)
+                request_datetime = datetime.combine(req_date, req_time.start_time) # The datetime of the booking
 
-                if request_datetime > datetime.now():
-                    lanes_filter = booked_lanes.objects.filter(date=request.POST['date'], time_slot=req_time)
-                    free_lanes = lanes.objects.exclude(lane_nr__in=lanes_filter.values_list('lane_nr'))
+                if request_datetime > datetime.now(): # If the booking is in the future
+                    lanes_filter = booked_lanes.objects.filter(date=request.POST['date'], time_slot=req_time) # Get all lanes that are booked on the same date and time slot
+                    free_lanes = lanes.objects.exclude(lane_nr__in=lanes_filter.values_list('lane_nr')) # Filter out all lanes that are booked on the same date and time slot
                     needed_lanes = math.ceil(int(request.POST['player_amount']) / 6) # Calculates how many lanes are needed
 
                     if needed_lanes <= len(free_lanes):
