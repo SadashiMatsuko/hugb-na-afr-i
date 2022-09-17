@@ -15,7 +15,7 @@ class TestViews(TestCase):
     def test_show_users_GET(self):
         response = self.client.get(self.edit_url)
         self.assertEquals(response.status_code, 200)
-        self.assertTemplateUsed(response, 'edit_employee.html')
+        self.assertTemplateUsed(response, 'employees/edit_employee.html')
 
     def test_register_GET(self):
         response = self.client.get(self.register_url)

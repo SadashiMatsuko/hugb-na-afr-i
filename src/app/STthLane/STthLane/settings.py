@@ -156,11 +156,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_URL = '/employee/login'
 LOGIN_REDIRECT_URL = '/'
 
-TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
 
 # Tell nose to measure coverage on the 'foo' and 'bar' apps
-NOSE_ARGS = [
-    '--with-coverage',
-    '--cover-package=employees.forms.py',
-    '--cover-package=employees.views.py',
-]
