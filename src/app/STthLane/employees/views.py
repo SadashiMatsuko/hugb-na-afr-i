@@ -1,7 +1,7 @@
 from django.contrib.auth import get_user_model
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
-from employees.forms import RegisterEmployeeForm
+from app.STthLane.employees.forms import RegisterEmployeeForm
 
 
 # Create your views here.
