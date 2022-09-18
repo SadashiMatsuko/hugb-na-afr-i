@@ -2,6 +2,7 @@ from django.contrib.auth.views import LoginView, LogoutView
 from django.test import SimpleTestCase
 from django.urls import reverse, resolve
 from app.STthLane.employees.views import register, showUsers, removeEmployee, editEmployee
+from app.STthLane.news.views import create_article
 
 
 class TestUrls(SimpleTestCase):
@@ -35,6 +36,11 @@ class TestUrls(SimpleTestCase):
         url = reverse('edit-employee', args=[1])
         print(resolve(url))
         self.assertEquals(resolve(url).func.__name__, editEmployee.__name__)
+
+    def test_create_article_url_is_resolved(self):
+        url = reverse('news:create_article')
+        print(resolve(url))
+        self.assertEquals(resolve(url).func.__name__, create_article.__name__)
 
 
 
