@@ -1,5 +1,5 @@
 from django.forms import ModelForm, widgets
-from models import articles
+from news.models import articles
 
 
 class ArticleCreateForm(ModelForm):
@@ -7,5 +7,7 @@ class ArticleCreateForm(ModelForm):
         model = articles
         exclude = ['id']
         widgets = {
-            'title': widgets.TextInput, 'text': widgets.Textarea, 'date_posted': widgets.DateTimeInput
+            'title': widgets.TextInput,
+            'text': widgets.Textarea,
+            'date_posted': widgets.DateTimeInput
         }

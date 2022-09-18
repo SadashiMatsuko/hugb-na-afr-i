@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'employees.apps.EmployeesConfig',
     'bookings.apps.BookingsConfig',
-    'django_nose'
+    'news.apps.NewsConfig',
+    'django_nose',
 ]
 
 MIDDLEWARE = [
