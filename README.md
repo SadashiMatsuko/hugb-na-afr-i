@@ -11,4 +11,6 @@ After that in the terminal write "./manage.py runserver" this will run the serve
 Quick start guide to Testing the project(PC):
 The root folder for testing is src (otherwise it's a pain to import from the application).
 From a command Prompt window find your way to the project-group-17\src\app\STthLane folder.
-There you should run the command: coverage run --source='.' manage.py test ../../test --keepdb.
+There you should run the command: coverage run --source='.' manage.py test ../../test --keepdb
+then run the command: coverage report
+Or run: coverage run --source='.' manage.py test ../../test --keepdb && coverage report
