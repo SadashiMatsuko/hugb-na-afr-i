@@ -4,6 +4,9 @@ from django.db import models
 class lanes(models.Model):
     lane_nr = models.IntegerField(primary_key=True)
 
+    def __str__(self):
+        return str(self.lane_nr)
+
 
 class booking_time_slots(models.Model):
     start_time = models.TimeField()
@@ -14,7 +17,7 @@ class booking_time_slots(models.Model):
 
 class bookings(models.Model):
     booker_phone = models.CharField(max_length=15, default="xxx-xxxx")
-    date = models.DateTimeField(null=True)
+    date = models.DateField(null=True)
     time_slot = models.ForeignKey(booking_time_slots, on_delete=models.CASCADE)
     player_amount = models.IntegerField(default=1)
     payed = models.BooleanField(default=False)

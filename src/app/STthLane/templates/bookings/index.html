@@ -1,22 +1,45 @@
 {% extends "base.html" %}
 {% block content %}
+    <style>
+    th,
+    td {
+    border: 1px solid #aaaa;
+    padding: 5px;
+    text-align: left;
+}
+    </style>
     <h1>Bookings</h1>
+    {% include "messages.html" %}
     <div class="container"></div>
+    <table style="border-collapse: collapse">
+    <thead><th>Date:</th><th>Phone:</th><th>Time:</th><th>Players:</th><th>Lanes:</th></thead>
+    <tbody>
     {% for booking in bookings %}
-        <div class="row">
-            <div class="col-md-4">
-                <h3>{{ booking.date }}</h3>
-                <p>Phone number: {{ booking.booker_phone }}</p>
-                <p>Time slot: {{ booking.time_slot }}</p>
-                <p>Amount of player: {{ booking.player_amount }}</p>
-                <p>Booked lanes:</p>
-                {% for lane in lanes %}
-                    {% if lane.booking_id == booking.id %}
-                        <p>{{ lane.lane_nr }}</p>
-                    {% endif %}
-                {% endfor %}
+        <tr>
+            <td>{{ booking.date }}</td>
+            <td>{{ booking.booker_phone }}</td>
+            <td>{{ booking.time_slot }}</td>
+            <td>{{ booking.player_amount }}</td>
+            <td>
+            <div style="display: inline-flex">
+            {% for lane in lanes %}
+                {% if lane.booking_id == booking.id %}
+                    <div style="padding-right: 5px"><p>nr: {{ lane.lane_nr }}</p></div>
+                {% endif %}
+            {% endfor %}
             </div>
-        </div>
+            </td>
+        <td><a class="btn btn-outline-secondary btn-sm" href="{% url "edit-booking" booking_id=booking.id %}">Edit</a></td>
+        <td><a class="btn btn-outline-danger btn-sm" href="{% url "remove-booking" booking_id=booking.id %}">Remove</a></td>
+        </tr>
     {% endfor %}
-    <div class="container"><a class="btn btn-primary" href="{% url 'add-booking' %}">Add new booking</a></div>
+    <tr>
+        <td></td>
+        <td></td>
+        <td><a class="btn btn-outline-primary btn-sm" href="{% url 'add-booking' %}">Add new booking</a></td>
+        <td></td>
+        <td></td>
+    </tr>
+    </tbody>
+    </table>
 {% endblock %}
