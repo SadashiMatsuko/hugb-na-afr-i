@@ -1,6 +1,7 @@
 from django.test import TestCase, Client
 from django.urls import reverse
 from app.STthLane.employees.views import register, showUsers, removeEmployee, editEmployee
+from app.STthLane.news.views import create_article
 
 
 class TestViews(TestCase):
@@ -11,6 +12,7 @@ class TestViews(TestCase):
         self.register_url = reverse('register')
         self.remove_url = reverse('remove-employee', args=[1])
         self.edit_emp_url = reverse('edit-employee', args=[1])
+        self.create_article_url = reverse('news:create_article')
 
     def test_show_users_GET(self):
         response = self.client.get(self.edit_url)
@@ -45,6 +47,10 @@ class TestViews(TestCase):
 
     def test_edit_employee_POST(self):
         response = self.client.post(self.edit_emp_url)
+        self.assertEquals(response.status_code, 200)
+
+    def test_create_article_POST(self):
+        response = self.client.post(self.create_article_url)
         self.assertEquals(response.status_code, 200)
 
 
