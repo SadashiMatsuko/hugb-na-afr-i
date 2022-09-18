@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block content %}
+    <style>
+    th,
+    td {
+    border: 1px solid #aaaa;
+    padding: 5px;
+    text-align: left;
+}
+    </style>
+    <h1>Bookings</h1>
+    {% include "messages.html" %}
+    <div class="container"></div>
+    <table style="border-collapse: collapse">
+    <thead><th>Date:</th><th>Phone:</th><th>Time:</th><th>Players:</th><th>Lanes:</th></thead>
+    <tbody>
+    {% for booking in bookings %}
+        <tr>
+            <td>{{ booking.date }}</td>
+            <td>{{ booking.booker_phone }}</td>
+            <td>{{ booking.time_slot }}</td>
+            <td>{{ booking.player_amount }}</td>
+            <td>
+            <div style="display: inline-flex">
+            {% for lane in lanes %}
+                {% if lane.booking_id == booking.id %}
+                    <div style="padding-right: 5px"><p>nr: {{ lane.lane_nr }}</p></div>
+                {% endif %}
+            {% endfor %}
+            </div>
+            </td>
+        <td><a class="btn btn-outline-secondary btn-sm" href="{% url "edit-booking" booking_id=booking.id %}">Edit</a></td>
+        <td><a class="btn btn-outline-danger btn-sm" href="{% url "remove-booking" booking_id=booking.id %}">Remove</a></td>
+        </tr>
+    {% endfor %}
+    <tr>
+        <td></td>
+        <td></td>
+        <td><a class="btn btn-outline-primary btn-sm" href="{% url 'add-booking' %}">Add new booking</a></td>
+        <td></td>
+        <td></td>
+    </tr>
+    </tbody>
+    </table>
+{% endblock %}

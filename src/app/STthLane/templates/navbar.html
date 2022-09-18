@@ -8,7 +8,6 @@
     </div>
 
     <div class="collapse navbar-collapse" id="navcol-1">
-        <ul class="nav navbar-nav">
 
                 <a >
                     <img src="{{ user.profiles.image.url }}" style="max-width: 43px; max-height: 43px; padding: 2px; background: dodgerblue; border-radius: 6px;">
@@ -16,19 +15,30 @@
                 </a>
 
             {% if user.is_authenticated %}
-                <p>&nbsp;</p>
-                <li><a href="{% url 'logout' %}">Logout</a></li>
-                <p>&nbsp;</p>
-                <li><a href="{% url 'add-booking' %}">Add booking</a></li>
+                <li class="nav-item dropdown" style="list-style-type: none;">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Bookings
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <li><a class="dropdown-item" href="{% url 'add-booking' %}">Add booking</a></li>
+                    <li><a class="dropdown-item" href="{% url 'bookings-index' %}">Bookings</a></li>
+                </ul>
+                </li>
                 {% if user.is_superuser %}
-                    <p>&nbsp;</p>
-                    <li><a href="{% url 'register' %}">Register</a></li>
-                    <p>&nbsp;</p>
-                    <li><a href="{% url 'edit' %}">Edit</a></li>
+                    <li class="nav-item dropdown" style="list-style-type: none;">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Employees
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <li><a class="dropdown-item" href="{% url 'register' %}">Register</a></li>
+                    <li><a class="dropdown-item" href="{% url 'edit' %}">Edit</a></li>
+                </ul>
+                </li>
                 {% endif %}
             {% else %}
                 <li><a href="{% url 'login' %}">Login</a></li>
                 {% endif %}
-        </ul>
+                <p>&nbsp;</p>
+                <li><a class="btn btn-danger btn-sm" href="{% url 'logout' %}">Logout</a></li>
     </div>
 </nav>
