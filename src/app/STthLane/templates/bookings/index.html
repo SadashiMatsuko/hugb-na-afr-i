@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>Bookings</h1>
+    <div class="container"></div>
+    {% for booking in bookings %}
+        <div class="row">
+            <div class="col-md-4">
+                <h3>{{ booking.date }}</h3>
+                <p>Phone number: {{ booking.booker_phone }}</p>
+                <p>Time slot: {{ booking.time_slot }}</p>
+                <p>Amount of player: {{ booking.player_amount }}</p>
+                <p>Booked lanes:</p>
+                {% for lane in lanes %}
+                    {% if lane.booking_id == booking.id %}
+                        <p>{{ lane.lane_nr }}</p>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    {% endfor %}
+    <div class="container"><a class="btn btn-primary" href="{% url 'add-booking' %}">Add new booking</a></div>
+{% endblock %}

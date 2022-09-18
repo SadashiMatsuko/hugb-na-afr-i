@@ -49,3 +49,7 @@ def add_bookings(request):
     else:
         form = CreateBookingForm()
     return render(request, 'bookings/add_booking.html', {'form': form})
+
+
+def index(request):
+    return render(request, 'bookings/index.html', {'bookings': bookings.objects.all().order_by('date'), 'lanes': booked_lanes.objects.all()})
