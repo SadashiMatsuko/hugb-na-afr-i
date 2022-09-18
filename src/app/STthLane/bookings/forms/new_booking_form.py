@@ -10,7 +10,6 @@ class CreateBookingForm(ModelForm):
         model = bookings
         exclude = {
             'id',
-            'payed',
             'time_slot',
         }
         widgets = {

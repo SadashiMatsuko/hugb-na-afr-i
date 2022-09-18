@@ -1,5 +1,6 @@
 from django.test import TestCase
 from app.STthLane.employees.forms import RegisterEmployeeForm
+from app.STthLane.bookings.forms import CreateBookingForm
 
 
 class TestForms(TestCase):
@@ -10,3 +11,9 @@ class TestForms(TestCase):
 
         self.assertFalse(form.is_valid())
         self.assertEquals(len(form.errors), 6)
+
+    def test_booking_form(self):
+        form = CreateBookingForm(data={})
+
+        self.assertFalse(form.is_valid())
+        self.assertEquals(len(form.errors), 5)
